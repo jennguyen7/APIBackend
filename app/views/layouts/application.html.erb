@@ -2,13 +2,41 @@
 <html>
   <head>
     <title>APIBackend</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <% if request.path == '/' %>
+      <input type="hidden" name="">
+      <% if current_user %>
+        <a href="/profiles/<%= current_user.id %>"><button><%= current_user.student_name %></button></a>
+      <% end %>
+    <% else %>
+      <a href="/"><button>Home Page</button></a>  
+    <% end %>
+  	 <% if current_user %>
+
+      <div class="user-panel-head">
+        <div class="user-icon nav-elem-group">
+        </div>
+      <div class="login-out nav-elem-group">
+          <a href="/logout"><button>Logout</button></a>
+      </div>
+      <div class="username nav-elem-group">
+        <p>
+          <!--This is calling the method 'current_user' because we used the helper method. See application_controller.rb-->
+          Welcome,  <%= current_user.account_holder_name %>
+          You've been logged on since <% user = GameSession.where(profile_id: session[:profile_id]).last %>
+          <%= user.game_session_date %>
+        </p>
+      </div> <!--end of username-->
+      <% else %>
+        <div>
+          <% if request.path == '/' %>  
+            <a href="/login"><button>Login</button></a> 
+          <% end %>
+        </div>
+      <% end %>
+
     <%= yield %>
   </body>
 </html>

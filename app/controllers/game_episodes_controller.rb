@@ -1,0 +1,2 @@
+class GameEpisodesController < ApplicationController
+end

@@ -1,0 +1,34 @@
+ <div class="login-panel">
+  <h1 class="login-head">
+  login and track your child's progress!
+  </h1>
+
+  <form action="/login" method="post">
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+
+    <div class="ipt-line">
+      <div class="user-col">
+        <label for="">Email</label>
+      </div>
+      <div class="user-ipt-area">
+        <input type="text" name="account_holder_email">
+      </div>
+    </div><!--end of ipt line-->
+
+
+    <div class="ipt-line">
+      <div class="user-col">
+        <label for="">Password</label>
+      </div>
+      <div class="user-ipt-area">
+        <input type="password" name="password">
+      </div>
+    </div><!--end of ipt line-->
+
+    <button class="login-btn">login</button>
+  </form>
+
+  <a class="signup-wrap" href="/signup">
+    no account? sign-up here!
+  </a>
+</div>

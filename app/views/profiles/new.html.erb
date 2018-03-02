@@ -1,0 +1,58 @@
+<h1 class="signup-head">Welcome to Tracking Profile</h1>
+
+<div class="signup-panel">
+  <p class="signup-sub-head">
+    <span class="signup-invite">sign up now</span><br>
+  </p>
+
+  <form action="/profiles" method="post">
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+
+    <div class="ipt-line">
+      <div class="user-col">
+        <label for="">Account Holder Name</label>
+      </div>
+      <div class="user-ipt-area">
+        <input type="string" name="account_holder_name">
+      </div>
+    </div>
+
+    <div class="ipt-line">
+      <div class="user-col">
+        <label for="">Email</label>
+      </div>
+      <div class="user-ipt-area">
+        <input type="string" name="account_holder_email">
+      </div>
+    </div>
+    
+    <div class="ipt-line">
+      <div class="user-col">
+        <label for="">Password</label>
+      </div>
+      <div class="user-ipt-area">
+        <input type="text" name="password">
+      </div>
+    </div>
+
+    <div class="ipt-line">
+      <div class="user-col">
+        <label for="">Student Name</label>
+      </div>
+      <div class="user-ipt-area">
+        <input type="string" name="student_name">
+      </div>
+    </div>
+
+    <div class="ipt-line">
+      <div class="user-col">
+        <label for="">Student Grade</label>
+      </div>
+      <div class="user-ipt-area">
+        <input type="integer" name="student_grade">
+      </div>
+    </div>
+    
+    <button class="signup-btn">sign up</button>
+  </form>
+</div>
